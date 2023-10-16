@@ -89,3 +89,11 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_time(void)
+{
+  uint64 *tp = (uint64 *)0x101000;
+  uint64 t = (*tp);
+  return t;
+}
